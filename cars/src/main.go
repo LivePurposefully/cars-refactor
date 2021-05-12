@@ -10,14 +10,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
+
+	"github.com/LivePurposefully/cars-refactor/cars/pkg/models"
 )
 
-type Vehicle struct {
-	Id    int    `json:"id"`
-	Make  string `json:"make" binding:"required"`
-	Model string `json:"model" binding:"required"`
-	Year  int    `json:"year" binding:"required"`
-}
+
 
 const (
 	SelectAllCarsQuery string = `SELECT id, make, model, year FROM cars ORDER BY id ASC`
