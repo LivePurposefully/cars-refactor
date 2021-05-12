@@ -7,15 +7,18 @@ import (
 
 	_ "github.com/lib/pq"
 	"github.com/gin-gonic/gin"
+
+	"github.com/LivePurposefully/cars-refactor/cars/pkg/models"
+	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants"
 )
 
-func Index(c *gin.Context) {
+func Index(c *gin.Context, db *sql.DB) {
 	results := make([]models.Vehicle, 0)
 
 	var rows *sql.Rows
 	var err error
 
-	rows, err = db.Query(SelectAllCarsQuery)
+	rows, err = db.Query(vehicledbconstants.SelectAllCarsQuery)
 	if err != nil {
 		log.Println(err)
 	}
