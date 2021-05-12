@@ -40,8 +40,8 @@ const (
 )
 
 var length = 0 //to start at least 0 length and increase overtime
-var storeData = make([]Vehicle, length)
-var nextId = 1 // the next ID in the database
+var storeData = make([]models.Vehicle, length)
+var nextId = 1 // the next ID in the databas
 
 func main() {
 
@@ -69,7 +69,7 @@ func main() {
 
 	//GET '/'  --> all cars
 	router.GET("/cars", func(c *gin.Context) {
-		results := make([]Vehicle, 0)
+		results := make([]models.Vehicle, 0)
 
 		var rows *sql.Rows
 		var err error
@@ -84,7 +84,7 @@ func main() {
 		count := 0
 
 		for rows.Next() {
-			var obj Vehicle
+			var obj models.Vehicle
 
 			err = rows.Scan(&obj.Id, &obj.Make, &obj.Model, &obj.Year)
 
@@ -110,7 +110,7 @@ func main() {
 
 	//POST '/cars'  --> create cars
 	router.POST("/cars", func(c *gin.Context) {
-		var car Vehicle
+		var car models.Vehicle
 
 		err := c.ShouldBindJSON(&car) //binds the input data into 'motor' var
 		if err != nil {
@@ -151,7 +151,7 @@ func main() {
 			return
 		}
 
-		var car Vehicle
+		var car models.Vehicle
 
 		err = db.QueryRow(SelectCarQuery, carid).Scan(&car.Id,
 			&car.Make, &car.Model, &car.Year)
@@ -197,7 +197,7 @@ func main() {
 			return
 		}
 
-		var car Vehicle
+		var car models.Vehicle
 
 		err = c.ShouldBindJSON(&car) //binds the input data into 'motor' var
 		if err != nil {
