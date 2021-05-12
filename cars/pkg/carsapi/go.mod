@@ -1,3 +1,3 @@
-module github.com/LivePurposefully/cars-refactor/pkg/carsapi
+module github.com/LivePurposefully/cars-refactor/cars/pkg/carsapi
 
 go 1.16
