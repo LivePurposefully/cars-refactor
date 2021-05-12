@@ -1,4 +1,4 @@
-package carsapi
+package vehicleapi
 
 import (
 	"database/sql"

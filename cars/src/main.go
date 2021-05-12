@@ -12,7 +12,7 @@ import (
 	"github.com/gin-contrib/cors"
 
 	"github.com/LivePurposefully/cars-refactor/cars/pkg/models"
-	"github.com/LivePurposefully/cars-refactor/cars/pkg/carsapi"
+	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi"
 )
 
 
