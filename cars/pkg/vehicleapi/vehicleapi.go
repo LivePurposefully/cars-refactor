@@ -10,15 +10,25 @@ import (
 
 	"github.com/LivePurposefully/cars-refactor/cars/pkg/models"
 	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants"
+	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledb"
 )
 
-func Index(c *gin.Context, db *sql.DB) {
+var DB = nil
+
+func init {
+	DB = vehicledb.SetupPostgresDb()
+	if DB == nil {
+		log.Panic(err)
+	}
+}
+
+func Index(c *gin.Context) {
 	results := make([]models.Vehicle, 0)
 
 	var rows *sql.Rows
 	var err error
 
-	rows, err = db.Query(vehicledbconstants.SelectAllCarsQuery)
+	rows, err = DB.Query(vehicledbconstants.SelectAllCarsQuery)
 	if err != nil {
 		log.Println(err)
 	}
@@ -52,7 +62,7 @@ func Index(c *gin.Context, db *sql.DB) {
 	//c.JSON(200, storeData)
 }
 
-func Create(c *gin.Context, db *sql.DB){
+func Create(c *gin.Context){
 	var car models.Vehicle
 
 	err := c.ShouldBindJSON(&car) //binds the input data into 'motor' var
@@ -68,7 +78,7 @@ func Create(c *gin.Context, db *sql.DB){
 			RETURNING id, make, model, year`
 	*/
 
-	err = db.QueryRow(vehicledbconstants.InsertCarQuery, car.Make, car.Model, car.Year).Scan(
+	err = DB.QueryRow(vehicledbconstants.InsertCarQuery, car.Make, car.Model, car.Year).Scan(
 		&car.Id, &car.Make, &car.Model, &car.Year)
 
 	if err != nil {
@@ -84,7 +94,7 @@ func Create(c *gin.Context, db *sql.DB){
 	c.JSON(200, car)
 }
 
-func Show (c *gin.Context, db *sql.DB){
+func Show (c *gin.Context){
 	carid, err := strconv.Atoi(c.Param("carid"))
 		if err != nil {
 			c.JSON(404, gin.H{
@@ -95,7 +105,7 @@ func Show (c *gin.Context, db *sql.DB){
 
 		var car models.Vehicle
 
-		err = db.QueryRow(vehicledbconstants.SelectCarQuery, carid).Scan(&car.Id,
+		err = DB.QueryRow(vehicledbconstants.SelectCarQuery, carid).Scan(&car.Id,
 			&car.Make, &car.Model, &car.Year)
 
 		if err != nil {
@@ -128,7 +138,7 @@ func Show (c *gin.Context, db *sql.DB){
 		c.JSON(200, car)
 }
 
-func Update(c *gin.Context, db *sql.DB){
+func Update(c *gin.Context){
 	carid, err := strconv.Atoi(c.Param("carid"))
 	if err != nil {
 		log.Println(err.Error())
@@ -146,7 +156,7 @@ func Update(c *gin.Context, db *sql.DB){
 		return
 	}
 
-	err = db.QueryRow(vehicledbconstants.UpdateCarQuery, carid, car.Make, car.Model, car.Year).Scan(
+	err = DB.QueryRow(vehicledbconstants.UpdateCarQuery, carid, car.Make, car.Model, car.Year).Scan(
 		&car.Id, &car.Make, &car.Model, &car.Year)
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -178,7 +188,7 @@ func Update(c *gin.Context, db *sql.DB){
 	c.JSON(200, car)
 }
 
-func Destroy(c *gin.Context, db *sql.DB){
+func Destroy(c *gin.Context){
 	carid, err := strconv.Atoi(c.Param("carid"))
 	if err != nil {
 		c.JSON(404, gin.H{
@@ -187,7 +197,7 @@ func Destroy(c *gin.Context, db *sql.DB){
 		return
 	}
 
-	res, err := db.Exec(vehicledbconstants.DeleteCarQuery, carid)
+	res, err := DB.Exec(vehicledbconstants.DeleteCarQuery, carid)
 	if err != nil {
 		c.JSON(500, gin.H{"message": "Internal server error!"})
 		return
