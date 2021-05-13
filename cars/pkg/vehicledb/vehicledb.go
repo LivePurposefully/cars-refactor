@@ -5,8 +5,6 @@ import(
 	"log"
 	"database/sql"
 	_ "github.com/lib/pq"
-
-	_ "github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants"
 )
 
 func SetupPostgresDb() *sql.DB{
