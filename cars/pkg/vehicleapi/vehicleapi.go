@@ -22,6 +22,20 @@ func init() {
 	}
 }
 
+func InitializeRouterWithConfiguration() {
+	router := gin.Default()
+	// enable CORS
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:8082"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization", "Accept"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
+
+	return router
+}
+
 func Index(c *gin.Context) {
 	results := make([]models.Vehicle, 0)
 

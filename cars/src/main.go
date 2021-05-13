@@ -3,6 +3,8 @@ package main
 import (
 	_ "github.com/lib/pq"
 
+	"log"
+
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
 
@@ -11,15 +13,9 @@ import (
 
 func main() {
 
-	router := gin.Default()
-	// enable CORS
-	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:8082"},
-		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization", "Accept"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-	}))
+	router := vehicleapi.InitializeRouterWithConfiguration()
+
+	log.Println(reflect.TypeOf(router))
 
 	//GET '/'  --> all cars
 	router.GET("/cars", func(c *gin.Context){
