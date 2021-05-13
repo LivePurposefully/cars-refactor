@@ -1,10 +1,12 @@
 package vehicledb
 
 import(
+	"fmt"
+	"log"
 	"database/sql"
 	_ "github.com/lib/pq"
 
-	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants"
+	_ "github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants"
 )
 
 func SetupPostgresDb() *sql.DB{
