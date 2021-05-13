@@ -68,7 +68,7 @@ func Create(c *gin.Context, db *sql.DB){
 			RETURNING id, make, model, year`
 	*/
 
-	err = db.QueryRow(InsertCarQuery, car.Make, car.Model, car.Year).Scan(
+	err = db.QueryRow(vehicledbconstants.InsertCarQuery, car.Make, car.Model, car.Year).Scan(
 		&car.Id, &car.Make, &car.Model, &car.Year)
 
 	if err != nil {
@@ -95,7 +95,7 @@ func Show (c *gin.Context, db *sql.DB){
 
 		var car models.Vehicle
 
-		err = db.QueryRow(SelectCarQuery, carid).Scan(&car.Id,
+		err = db.QueryRow(vehicledbconstants.SelectCarQuery, carid).Scan(&car.Id,
 			&car.Make, &car.Model, &car.Year)
 
 		if err != nil {
@@ -146,7 +146,7 @@ func Update(c *gin.Context, db *sql.DB){
 		return
 	}
 
-	err = db.QueryRow(UpdateCarQuery, carid, car.Make, car.Model, car.Year).Scan(
+	err = db.QueryRow(vehicledbconstants.UpdateCarQuery, carid, car.Make, car.Model, car.Year).Scan(
 		&car.Id, &car.Make, &car.Model, &car.Year)
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -187,7 +187,7 @@ func Destroy(c *gin.Context, db *sql.DB){
 		return
 	}
 
-	res, err := db.Exec(DeleteCarQuery, carid)
+	res, err := db.Exec(vehicledbconstants.DeleteCarQuery, carid)
 	if err != nil {
 		c.JSON(500, gin.H{"message": "Internal server error!"})
 		return
