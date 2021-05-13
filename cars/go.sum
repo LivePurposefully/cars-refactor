@@ -2,8 +2,12 @@ github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210512220233-
 github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210512220233-62f447d89d29/go.mod h1:aa66NmElvmLVyB00AsWiJHS1TeH41dCzd+0yNQUOrjI=
 github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210512231145-2dd997e6af76 h1:ilEtBi4h5OAHKk6DWlEaaZpONmIbtdaMmNqIWf1Xfng=
 github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210512231145-2dd997e6af76/go.mod h1:aa66NmElvmLVyB00AsWiJHS1TeH41dCzd+0yNQUOrjI=
+github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210513022108-5e7522a630da h1:j8RbFqtdijKKec0hSjCBk/VUc2Apora+SwP1C/jeObo=
+github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210513022108-5e7522a630da/go.mod h1:aa66NmElvmLVyB00AsWiJHS1TeH41dCzd+0yNQUOrjI=
 github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi v0.0.0-20210512233810-c6c5f9fb6854 h1:tBFrOpM+ZQnopqgu1sBjprbSmHDBxgLvtqvGxRVSd3g=
 github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi v0.0.0-20210512233810-c6c5f9fb6854/go.mod h1:KwxwVD9vhnofSXhsGlamwOx5RQAFtiM+wwSflL1bkrI=
+github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi v0.0.0-20210513022108-5e7522a630da h1:9+9gplI6CM4+9AztOnP3Y6oaUA4bDuXO/bh506wSPcc=
+github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi v0.0.0-20210513022108-5e7522a630da/go.mod h1:POCZXypqIA6S14ZXF1HXg9Pu4at4fGTVzclrGVLRNGg=
 github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210512233810-c6c5f9fb6854 h1:3aW1Tq4+85uFQJOT0y53DYCrWUWvwOsezsR4zOBLC9s=
 github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210512233810-c6c5f9fb6854/go.mod h1:5peZCX++HJjcU4b2F1LOtwBIAB0KtPGixKkFYP+mNro=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
