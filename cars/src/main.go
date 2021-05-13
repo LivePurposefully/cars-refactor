@@ -69,7 +69,9 @@ func main() {
 	}
 
 	//GET '/'  --> all cars
-	router.GET("/cars", carsapi.Index(c *gin.Context))
+	router.GET("/cars", func(c *gin.Context){
+		vehicleapi.Index(c, db)
+	})
 
 	//POST '/cars'  --> create cars
 	router.POST("/cars", func(c *gin.Context) {

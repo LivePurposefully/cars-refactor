@@ -12,6 +12,11 @@ import (
 	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants"
 )
 
+type CarApi struct{
+	context *gin.Context
+	db
+}
+
 func Index(c *gin.Context, db *sql.DB) {
 	results := make([]models.Vehicle, 0)
 
