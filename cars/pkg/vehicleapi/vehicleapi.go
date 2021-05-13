@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"strconv"
+	"github.com/gin-contrib/cors"
 
 	_ "github.com/lib/pq"
 	"github.com/gin-gonic/gin"
@@ -22,7 +23,7 @@ func init() {
 	}
 }
 
-func InitializeRouterWithConfiguration() {
+func InitializeRouterWithConfiguration() *gin.Engine{
 	router := gin.Default()
 	// enable CORS
 	router.Use(cors.New(cors.Config{

@@ -3,10 +3,7 @@ package main
 import (
 	_ "github.com/lib/pq"
 
-	"log"
-
 	"github.com/gin-gonic/gin"
-	"github.com/gin-contrib/cors"
 
 	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi"
 )
@@ -14,8 +11,6 @@ import (
 func main() {
 
 	router := vehicleapi.InitializeRouterWithConfiguration()
-
-	log.Println(reflect.TypeOf(router))
 
 	//GET '/'  --> all cars
 	router.GET("/cars", func(c *gin.Context){
