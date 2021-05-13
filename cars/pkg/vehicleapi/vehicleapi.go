@@ -15,7 +15,7 @@ import (
 
 var DB *sql.DB
 
-func init (){
+func init() {
 	DB = vehicledb.SetupPostgresDb()
 	if DB == nil {
 		log.Panic("Db is nil")
