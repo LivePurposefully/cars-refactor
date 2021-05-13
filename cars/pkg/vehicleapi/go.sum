@@ -1,7 +1,11 @@
 github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210512231145-2dd997e6af76 h1:ilEtBi4h5OAHKk6DWlEaaZpONmIbtdaMmNqIWf1Xfng=
 github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210512231145-2dd997e6af76/go.mod h1:aa66NmElvmLVyB00AsWiJHS1TeH41dCzd+0yNQUOrjI=
+github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledb v0.0.0-20210513222624-d194af5cb982 h1:Drn0soC8LgS2Hl9j4LGPacvtByXOiNdc6ll6rkv8B5w=
+github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledb v0.0.0-20210513222624-d194af5cb982/go.mod h1:K7p/cJSWt8jqCDNEAMQhoNu+0cFtoozqzGLmbEOM5OA=
 github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210512233810-c6c5f9fb6854 h1:3aW1Tq4+85uFQJOT0y53DYCrWUWvwOsezsR4zOBLC9s=
 github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210512233810-c6c5f9fb6854/go.mod h1:5peZCX++HJjcU4b2F1LOtwBIAB0KtPGixKkFYP+mNro=
+github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210513220125-4a1e3cb464a7 h1:lr0SK0isuw42qth71IAZ2LG3+ZA32/+KOdSXSgLrisY=
+github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210513220125-4a1e3cb464a7/go.mod h1:5peZCX++HJjcU4b2F1LOtwBIAB0KtPGixKkFYP+mNro=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE=

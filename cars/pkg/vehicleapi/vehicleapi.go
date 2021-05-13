@@ -13,12 +13,12 @@ import (
 	"github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledb"
 )
 
-var DB = nil
+var DB *sql.DB
 
-func init {
+func init (){
 	DB = vehicledb.SetupPostgresDb()
 	if DB == nil {
-		log.Panic(err)
+		log.Panic("Db is nil")
 	}
 }
 
