@@ -4,9 +4,9 @@ go 1.16
 
 require (
 	github.com/LivePurposefully/cars-refactor/cars/pkg/models v0.0.0-20210513234544-b92097eac5fe // indirect
-	github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi v0.0.0-20210513234935-342d1bfbc36e // indirect
+	github.com/LivePurposefully/cars-refactor/cars/pkg/vehicleapi v0.0.0-20210514000028-2be44ef728de // indirect
 	github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledb v0.0.0-20210513234544-b92097eac5fe // indirect
-	github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210513224800-391b9cc1027a // indirect
+	github.com/LivePurposefully/cars-refactor/cars/pkg/vehicledbconstants v0.0.0-20210513234935-342d1bfbc36e // indirect
 	github.com/gin-contrib/cors v1.3.1 // indirect
 	github.com/gin-gonic/gin v1.7.1 // indirect
 	github.com/go-playground/validator/v10 v10.6.1 // indirect
