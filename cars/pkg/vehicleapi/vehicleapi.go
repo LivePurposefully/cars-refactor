@@ -37,30 +37,30 @@ func InitializeRouterWithConfiguration() *gin.Engine{
 	return router
 }
 
-func InitializeVehicleRoutes(router *gin.Engine) *gin.Engine{
+func InitializeVehicleRoutes(router *gin.Engine){
 		//GET '/'  --> all cars
 		router.GET("/cars", func(c *gin.Context){
-			vehicleapi.Index(c)
+			Index(c)
 		})
 	
 		//POST '/cars'  --> create cars
 		router.POST("/cars", func(c *gin.Context) {
-			vehicleapi.Create(c)
+			Create(c)
 		})
 	
 		//GET '/cars/:carid'  --> get single car
 		router.GET("/cars/:carid", func(c *gin.Context) {
-			vehicleapi.Show(c)
+			Show(c)
 		})
 	
 		//PUT '/cars/:carid'  --> modify that single car
 		router.PUT("/cars/:carid", func(c *gin.Context) {
-			vehicleapi.Update(c)
+			Update(c)
 		})
 	
 		//DELETE '/cars/:carid'  --> delete that single car
 		router.DELETE("/cars/:carid", func(c *gin.Context) {
-			vehicleapi.Destroy(c)
+			Destroy(c)
 	
 		})
 
